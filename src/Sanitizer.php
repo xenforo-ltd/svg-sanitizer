@@ -1297,7 +1297,13 @@ class Sanitizer
         $this->cleanHrefAttributes($element);
     }
 
-    protected function cleanHrefAttributes(\DOMElement $element, string $prefix = ''): void
+    /**
+     * @param \DOMElement $element
+     * @param string      $prefix
+     *
+     * @return void
+     */
+    protected function cleanHrefAttributes(\DOMElement $element, string $prefix = '')
     {
         $relevantAttributes = array_filter(
             iterator_to_array($element->attributes, false),
